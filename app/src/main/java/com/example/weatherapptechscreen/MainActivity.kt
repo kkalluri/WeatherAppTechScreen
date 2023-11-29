@@ -7,10 +7,12 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.weatherapptechscreen.features.SearchScreen
+import com.example.weatherapptechscreen.features.WeatherInformation
+import com.example.weatherapptechscreen.features.WeatherViewModel
 import com.example.weatherapptechscreen.ui.theme.WeatherAppTechScreenTheme
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -29,27 +31,26 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
 
-                      Column (modifier = Modifier){
+                    Column(modifier = Modifier) {
 
-                          SearchScreen(viewModel = viewModel)
-                          WeatherInformation(viewModel = viewModel,
-                              fetchWeatherDataByCity = { enteredCity ->
-                                  viewModel.getWeatherByCity(enteredCity)
-                              },
-                              fetchWeatherDataByCoordinates = {
-                                  var latlangData = it.split(",")
-                                  viewModel.getWeatherByCoordinates(
-                                      latlangData[0].toDouble(),
-                                      latlangData[1].toDouble()
-                                  )
-                              })
-                      }
+                        SearchScreen(viewModel = viewModel)
+                        WeatherInformation(viewModel = viewModel,
+                            fetchWeatherDataByCity = { enteredCity ->
+                                viewModel.getWeatherByCity(enteredCity)
+                            },
+                            fetchWeatherDataByCoordinates = {
+                                var latlonData = it.split(",")
+                                viewModel.getWeatherByCoordinates(
+                                    latlonData[0].toDouble(),
+                                    latlonData[1].toDouble()
+                                )
+                            })
+                    }
                 }
             }
         }
     }
 }
-
 
 
 @Preview(showBackground = true)

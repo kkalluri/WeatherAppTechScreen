@@ -1,4 +1,4 @@
-package com.example.weatherapptechscreen
+package com.example.weatherapptechscreen.features
 
 import android.content.Context
 import android.location.Location

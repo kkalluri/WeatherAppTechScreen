@@ -1,4 +1,4 @@
-package com.example.weatherapptechscreen
+package com.example.weatherapptechscreen.features
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -31,7 +31,7 @@ import com.example.weatherapptechscreen.data.remote.NetworkResult
  */
 
 @Composable
-fun WeatherInformation(viewModel: WeatherViewModel, fetchWeatherDataByCity: (String) -> Unit , fetchWeatherDataByCoordinates: (String) -> Unit) {
+fun WeatherInformation(viewModel: WeatherViewModel, fetchWeatherDataByCity: (String) -> Unit, fetchWeatherDataByCoordinates: (String) -> Unit) {
 
     val enteredCity by viewModel.enteredCity.observeAsState()
     val latlang by viewModel.latLong.observeAsState()

@@ -1,13 +1,11 @@
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import com.example.weatherapptechscreen.TestCoroutineRule
-import com.example.weatherapptechscreen.WeatherViewModel
+import com.example.weatherapptechscreen.features.WeatherViewModel
 import com.example.weatherapptechscreen.data.model.WeatherResponse
 import com.example.weatherapptechscreen.data.remote.NetworkResult
 import com.example.weatherapptechscreen.repository.WeatherRepositoryImpl
-import com.example.weatherapptechscreen.safeEq
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
@@ -16,7 +14,6 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.mockito.ArgumentMatchers.any
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.Mockito.mock

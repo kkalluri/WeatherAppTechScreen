@@ -1,4 +1,4 @@
-package com.example.weatherapptechscreen
+package com.example.weatherapptechscreen.features
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
